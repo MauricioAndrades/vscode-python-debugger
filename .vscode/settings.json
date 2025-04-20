@@ -1,0 +1,40 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "out": false, // set this to true to hide the "out" folder with the compiled JS files
+        "dist": false // set this to true to hide the "dist" folder with the compiled JS files
+    },
+    "search.exclude": {
+        "out": true, // set this to false to include "out" folder in search results
+        "dist": true, // set this to false to include "dist" folder in search results
+        ".venv": true,
+        ".nox": true
+    },
+    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
+    "typescript.tsc.autoDetect": "off",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true
+    },
+    "python.analysis.exclude": [
+        "**/tests/**"
+    ],
+    "python.analysis.extraPaths": [
+        "venv/lib/python3.12/site-packages"
+    ],
+    "pylint.args": [
+        "--disable=all",
+        "--disable=C0206,W1201,C3001,C0301,C0304,C0200,C0413,C0411,W0611,C0415,C0412,C0103,W1309,W1203,E1121,W0718,C0115,C0114,C0116,C0209",
+        "--enable=E,F",
+        "--init-hook=import sys, os, site; sys.path.extend(['${workspaceFolder}', '${workspaceFolder}/venv/lib/python3.12/site-packages']); exec(open('${workspaceFolder}/init.py').read())"
+    ],
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.enablePytestSupport": false,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.languageServerMode": "default"
+}
